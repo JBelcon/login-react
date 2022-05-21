@@ -1,10 +1,14 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../context/AuthProvider";
 
 const Login = () => {
   // useRef
   const email = useRef();
   const password = useRef();
+
+  //useContext
+  const context = useContext(AuthContext);
 
   // Funtion Login
   const login = (e) => {
@@ -20,7 +24,14 @@ const Login = () => {
       }),
     })
       .then((res) => res.json())
-      .then((data) => localStorage.setItem("token", data.token))
+      .then((data) => {
+        localStorage.setItem("token", data.token);
+        context.setAuth({
+          id: data.user.id,
+          name: data.user.name,
+          logged: true,
+        });
+      })
       .catch((error) => console.log(`El error es ${error}`));
   };
   return (
@@ -67,7 +78,7 @@ const Login = () => {
               />
 
               <button className="rounded-md bg-blue-400 hover:bg-blue-800 text-white font-bold py-2 px-3">
-                Login
+                <NavLink to="/">Login</NavLink>
               </button>
             </form>
           </div>
