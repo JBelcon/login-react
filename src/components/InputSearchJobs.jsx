@@ -1,5 +1,5 @@
 import React from "react";
-import { BtnPrimary } from "./BtnPrimary";
+import { InputSearch } from "./InputSearch";
 
 const InputSearchJobs = () => {
   return (
@@ -10,17 +10,10 @@ const InputSearchJobs = () => {
             <h2 className=" text-2xl font-bold text-black lg:text-4xl lg:mb-2">
               Find Remote Job in Lorem Ipsum
             </h2>
-            <p className="mb-6 text-base text-black lg:mb-8">
+            <p className="text-base text-black ">
               Lorem Ipsum is simply dummy text of the printing.
             </p>
-            <div className="flex mb-6 space-x-4">
-              <input
-                className="flex-1 p-4 leading-none border border-gray-200 rounded-lg focus:outline-none focus:border-blue-600"
-                type="text"
-                placeholder="Search for job title"
-              />
-              <BtnPrimary> Search</BtnPrimary>
-            </div>
+            <InputSearch />
             <p className="text-sm text-gray-500">
               Lorem Ipsum is simply dummy text industry.
             </p>
