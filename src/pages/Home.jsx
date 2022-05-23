@@ -2,6 +2,7 @@ import { data } from "autoprefixer";
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import { putWithToken } from "../api";
+import { InputSearchJobs } from "../components/InputSearchJobs";
 import { Temple } from "../components/Temple";
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
   };
   return (
     <div className="bg-gray-200">
+      <InputSearchJobs />
       <Temple />
       <input ref={empleo} placeholder="id empleo" />
       <button
