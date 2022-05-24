@@ -2,8 +2,8 @@ import { data } from "autoprefixer";
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import { putWithToken } from "../api";
+import { UserProfile } from "../components/UserProfile";
 import { InputSearchJobs } from "../components/InputSearchJobs";
-import { Temple } from "../components/Temple";
 
 const Home = () => {
   const empleo = useRef();
@@ -17,10 +17,11 @@ const Home = () => {
         console.log(error);
       });
   };
+
   return (
     <div className="bg-gray-200">
       <InputSearchJobs />
-      <Temple />
+      <UserProfile />
       <input ref={empleo} placeholder="id empleo" />
       <button
         className="rounded-md bg-blue-400 hover:bg-blue-800 text-white font-bold py-2 px-3"
