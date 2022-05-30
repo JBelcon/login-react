@@ -54,12 +54,12 @@ const Navbar = () => {
         })}
         {!context.auth.logged && (
           <BtnPrimary>
-            <NavLink to="/login">Login</NavLink>
+            <NavLink to="/signup">Sign up</NavLink>
           </BtnPrimary>
         )}
         {!context.auth.logged && (
           <BtnPrimary>
-            <NavLink to="/signup">Sign up</NavLink>
+            <NavLink to="/login">Login</NavLink>
           </BtnPrimary>
         )}
 

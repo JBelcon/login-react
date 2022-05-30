@@ -20,7 +20,6 @@ const Home = () => {
   return (
     <div className="bg-gray-200">
       <InputSearchJobs />
-      <Temple />
       <input ref={empleo} placeholder="id empleo" />
       <button
         className="rounded-md bg-blue-400 hover:bg-blue-800 text-white font-bold py-2 px-3"
