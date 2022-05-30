@@ -22,25 +22,6 @@ const Home = () => {
     <div className="bg-gray-200">
       <InputSearchJobs />
       <UserProfile />
-      <input ref={empleo} placeholder="id empleo" />
-      <button
-        className="rounded-md bg-blue-400 hover:bg-blue-800 text-white font-bold py-2 px-3"
-        onClick={apply}
-      >
-        Aplicar
-      </button>
-
-      <Link to="/details/tzuzul">Ir a componente</Link>
-      <Link
-        to="/props"
-        state={{
-          name: "Tzuzul",
-          id: "abc123",
-          active: true,
-        }}
-      >
-        Ir a componente con props
-      </Link>
     </div>
   );
 };

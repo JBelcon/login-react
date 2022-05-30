@@ -1,32 +1,46 @@
-import React from "react";
-import { BtnPrimary } from "./BtnPrimary";
+import React, { useRef } from "react";
+import { Link } from "react-router-dom";
+import { putWithToken } from "../api";
+import { UserProfile } from "./UserProfile";
+import { InputSearchJobs } from "./InputSearchJobs";
 
 const Temple = () => {
+  const empleo = useRef();
+
+  const apply = () => {
+    putWithToken(`/api/jobs/apply/${empleo.current.value}`)
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
-    <section className="h-screen">
-      <div className="flex flex-col justify-center text-center items-center h-3/4">
-        <div className="mt-12">
-          <h2 className="mb-2 text-3xl font-bold text-black lg:text-5xl lg:mb-10">
-            Find Remote Job in Lorem Ipsum
-          </h2>
-          <p className="mb-6 text-lg text-black lg:mb-8">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.
-          </p>
-          <div className="flex mb-6 space-x-4">
-            <input
-              className="flex-1 p-4 leading-none border border-gray-200 rounded-lg focus:outline-none focus:border-blue-600"
-              type="text"
-              placeholder="Search for job title"
-            />
-            <BtnPrimary> Search</BtnPrimary>
-          </div>
-          <p className="text-sm text-gray-500">
-            Lorem Ipsum is simply dummy text industry.
-          </p>
-        </div>
-      </div>
-    </section>
+    <div className="bg-gray-200">
+      <InputSearchJobs />
+      <UserProfile />
+      <input ref={empleo} placeholder="id empleo" />
+      <button
+        className="rounded-md bg-blue-400 hover:bg-blue-800 text-white font-bold py-2 px-3"
+        onClick={apply}
+      >
+        Aplicar
+      </button>
+
+      <Link to="/details/tzuzul">Ir a componente</Link>
+      <Link
+        to="/props"
+        state={{
+          name: "Tzuzul",
+          id: "abc123",
+          active: true,
+        }}
+      >
+        Ir a componente con props
+      </Link>
+    </div>
   );
 };
 

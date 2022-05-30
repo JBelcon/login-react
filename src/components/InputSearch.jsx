@@ -35,21 +35,16 @@ const InputSearch = () => {
           onChange={handleSearch}
           ref={job}
           type="search"
-          name=""
-          id=""
           placeholder="Search for job title"
           className="w-full text-sm outline-none focus:outline-none bg-transparent"
         />
         <select
-          name=""
-          id=""
+          defaultValue=""
           ref={country}
           onChange={handleSearch}
           className=" outline-none focus:outline-none bg-transparent text-gray-500"
         >
-          <option value="" defaultValue>
-            Seleccione un país
-          </option>
+          <option value="">Seleccione un país</option>
           <option value="AR">Argentina</option>
           <option value="CO">Colombia</option>
           <option value="US">Estados Unidos</option>
