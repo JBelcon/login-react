@@ -1,7 +1,7 @@
 import React from "react";
 import { InputSearch } from "./InputSearch";
 
-const InputSearchJobs = () => {
+const Banner = () => {
   return (
     <>
       <section className="py-12 bg-indigo-200 lg:py-24 h-2/4">
@@ -24,4 +24,4 @@ const InputSearchJobs = () => {
   );
 };
 
-export { InputSearchJobs };
+export { Banner };
