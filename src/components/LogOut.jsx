@@ -13,6 +13,10 @@ const LogOut = () => {
       logged: false,
     });
   };
-  return <BtnPrimary onClick={handleLogOut}>Cerrar sesión</BtnPrimary>;
+  return (
+    <div onClick={handleLogOut}>
+      <BtnPrimary>Cerrar sesión</BtnPrimary>
+    </div>
+  );
 };
 export { LogOut };

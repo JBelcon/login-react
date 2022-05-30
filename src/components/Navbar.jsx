@@ -36,7 +36,7 @@ const Navbar = () => {
       <ul
         className={`flex items-center gap-8 duration-500  ${
           menu
-            ? "flex-col lg:flex-row pt-32 lg:pt-0 absolute lg:static top-[68px] right-0 bg-white w-2/3 lg:w-auto h-screen lg:h-auto"
+            ? "flex-col lg:flex-row pt-32 lg:pt-0 absolute lg:static top-16 right-0 bg-white w-2/3 lg:w-auto h-screen lg:h-auto"
             : "hidden lg:flex"
         }`}
       >
@@ -54,12 +54,12 @@ const Navbar = () => {
         })}
         {!context.auth.logged && (
           <BtnPrimary>
-            <NavLink to="/login">Login</NavLink>
+            <NavLink to="/signup">Sign up</NavLink>
           </BtnPrimary>
         )}
         {!context.auth.logged && (
           <BtnPrimary>
-            <NavLink to="/signup">Sign up</NavLink>
+            <NavLink to="/login">Login</NavLink>
           </BtnPrimary>
         )}
 
